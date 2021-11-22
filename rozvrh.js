@@ -16,21 +16,30 @@ const app = initializeApp(firebaseConfig);
 
 const database = getDatabase(app);
 
+// database init ↑
+
+// stahování úkolů
 
 const dbRef = ref(database);
 get(child(dbRef, `ukoly`)).then((snapshot) => {
   if (snapshot.exists()) {
     console.log(snapshot.val());
 
+	// tvoření htmlka
+
 	const h1 = document.createElement('h1');
 	h1.innerText = "Úkoly"
 
 	const ul = document.createElement('ul')
 
+	ul.className = "list-group"
+
 	for (let ukol of snapshot.val()) {
 		const li = document.createElement('li')
 
 		li.innerHTML = ukol["datum"] + " – " + ukol["predmet"] + " – " + ukol["nazev"]
+
+		li.className = "list-group-item"
 
 		ul.append(li)
 	}
@@ -39,6 +48,9 @@ get(child(dbRef, `ukoly`)).then((snapshot) => {
 
 	body.append(h1);
 	body.append(ul)
+
+
+	// když to není:
 
   } else {
     console.log("No data available");
