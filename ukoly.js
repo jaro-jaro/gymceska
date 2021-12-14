@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig)
 
 const database = getDatabase(app)
 
-// database init ↑
+// database init ↑ 
 
 // stahování úkolů
 
