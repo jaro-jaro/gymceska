@@ -21,7 +21,7 @@ const database = getDatabase(app)
 // stahování úkolů
 
 const dbRef = ref(database)
-get(child(dbRef, "ukoly2")).then((snapshot) => {
+get(child(dbRef, "ukoly")).then((snapshot) => {
 	if (snapshot.exists()) {
 		console.log(snapshot.val())
 
