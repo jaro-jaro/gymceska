@@ -110,4 +110,4 @@ get(child(dbRef, "ukoly2")).then((snapshot) => {
 	}
 }).catch((error) => {
   	console.error(error)
-}
+})
