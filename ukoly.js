@@ -16,12 +16,12 @@ const app = initializeApp(firebaseConfig)
 
 const database = getDatabase(app)
 
-// database init ↑
+// database init ↑ 
 
 // stahování úkolů
 
 const dbRef = ref(database)
-get(child(dbRef, "ukoly")).then((snapshot) => {
+get(child(dbRef, "ukoly5")).then((snapshot) => {
 	if (snapshot.exists()) {
 		console.log(snapshot.val())
 
@@ -110,4 +110,4 @@ get(child(dbRef, "ukoly")).then((snapshot) => {
 	}
 }).catch((error) => {
   	console.error(error)
-}}
+})
